@@ -1,18 +1,6 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
-
-import Colors from '../../constants/Colors';
-
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+import { Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
+import { useColorScheme } from "react-native";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -20,34 +8,55 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
+        tabBarActiveTintColor: "black",
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="Home"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Ionicons name="md-home-sharp" size={24} color="black" />
+            ) : (
+              <Ionicons name="md-home-outline" size={24} color="black" />
+            ),
+          headerShown: false,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="Cart"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Ionicons name="cart" size={24} color="black" />
+            ) : (
+              <Ionicons name="cart-outline" size={24} color="black" />
+            ),
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="Favorites"
+        options={{
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Ionicons name="heart" size={24} color="black" />
+            ) : (
+              <Ionicons name="heart-outline" size={24} color="black" />
+            ),
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="Profile"
+        options={{
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Ionicons name="person" size={24} color="black" />
+            ) : (
+              <Ionicons name="person-outline" size={24} color="black" />
+            ),
+          headerShown: false,
         }}
       />
     </Tabs>
