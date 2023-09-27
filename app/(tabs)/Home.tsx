@@ -2,8 +2,12 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
 import HomeImage from "../components/home/HomeImage";
+import { useState } from "react";
+import GenderMenu from "../components/home/GenderMenu";
 
 export default function Home() {
+  const [selectedGender, setSelectedGender] = useState<string>("Men");
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.searchHeaderContainer}>
@@ -13,6 +17,10 @@ export default function Home() {
       <ScrollView>
         <Text style={styles.title}>Discover</Text>
         <HomeImage />
+        <GenderMenu
+          selectedGender={selectedGender}
+          setSelectedGender={setSelectedGender}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -21,6 +29,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "white",
   },
   searchHeaderContainer: {
     padding: 10,
