@@ -1,14 +1,6 @@
-import {
-  Image,
-  ImageBackground,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
-import { LinearGradient } from "expo-linear-gradient";
 import HomeImage from "../components/home/HomeImage";
 
 export default function Home() {
@@ -41,25 +33,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingBottom: 10,
     fontSize: 30,
-    fontWeight: "bold",
-  },
-  imageContainer: {
-    backgroundColor: "red",
-    height: 220,
-    position: "relative",
-  },
-  image: {
-    height: "100%",
-    width: "100%",
-    resizeMode: "center",
-  },
-  imageText: {
-    position: "absolute",
-    zIndex: 1,
-    bottom: 10,
-    left: 10,
-    fontSize: 24,
-    color: "white",
     fontWeight: "bold",
   },
 });
