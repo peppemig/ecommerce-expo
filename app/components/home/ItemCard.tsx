@@ -1,15 +1,17 @@
 import { Link } from "expo-router";
 import { Text, Image, Pressable } from "react-native";
 
-type Item = {
+type ItemProps = {
   id: number;
   title: string;
   price: number;
+  sizes: string[];
+  colors: string[];
 };
 
 type ItemCardProps = {
   index: number;
-  item: Item;
+  item: ItemProps;
 };
 
 export default function ItemCard({ index, item }: ItemCardProps) {
@@ -18,7 +20,9 @@ export default function ItemCard({ index, item }: ItemCardProps) {
       asChild
       href={{
         pathname: "/item/[id]",
-        params: { id: item.id, title: item.title, price: item.price },
+        params: {
+          id: item.id,
+        },
       }}
       style={[
         { flex: 1 },
