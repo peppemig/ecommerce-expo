@@ -1,13 +1,12 @@
 import { Stack } from "expo-router";
 import { useState } from "react";
-import { View, Text, Image, Pressable, Button } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { View, Text, Image, Pressable, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const ITEM = {
   id: 1,
-  title: "ITEM NAME",
-  brand: "ITEM BRAND",
+  title: "Item name",
+  brand: "Item brand",
   price: 110,
   sizes: ["S", "M", "L", "XL"],
   colors: ["Black", "Red", "Yellow", "White"],
@@ -176,6 +175,7 @@ export default function ItemPage() {
             alignItems: "center",
             paddingVertical: 18,
             flex: 1,
+            borderRadius: 10,
           }}
         >
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 14 }}>
@@ -189,6 +189,7 @@ export default function ItemPage() {
             width: 50,
             justifyContent: "center",
             alignItems: "center",
+            borderRadius: 10,
           }}
         >
           <Ionicons name="heart-outline" size={26} color="black" />

@@ -1,10 +1,17 @@
-import { SafeAreaView, StyleSheet, Text, View, FlatList } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  ScrollView,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { ScrollView } from "react-native-gesture-handler";
 import HomeImage from "../components/home/HomeImage";
 import { useState } from "react";
 import GenderMenu from "../components/home/GenderMenu";
 import ItemCard from "../components/home/ItemCard";
+import { registerRootComponent } from "expo";
 
 import { DATA } from "../data/data";
 
@@ -13,10 +20,6 @@ export default function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.searchHeaderContainer}>
-        <Ionicons name="filter" size={28} color="black" />
-        <Ionicons name="search" size={28} color="black" />
-      </View>
       <ScrollView>
         <Text style={styles.title}>Discover</Text>
         <HomeImage />
@@ -51,8 +54,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    paddingLeft: 10,
-    paddingBottom: 10,
+    padding: 10,
     fontSize: 30,
     fontWeight: "bold",
   },
@@ -60,3 +62,5 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+registerRootComponent(Home);

@@ -1,17 +1,33 @@
-import { StyleSheet, View, SafeAreaView, Text, Pressable } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  Text,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import CartItem from "../components/cart/CartItem";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Cart() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Cart</Text>
       <ScrollView
         style={{
           backgroundColor: "white",
           padding: 10,
+          marginBottom: 100,
         }}
       >
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <CartItem />
         <CartItem />
       </ScrollView>
       <View style={styles.cartBottomTotalArea}>
@@ -36,6 +52,7 @@ export default function Cart() {
             <Text style={{ color: "white", fontWeight: "bold", fontSize: 16 }}>
               Checkout
             </Text>
+            <Ionicons name="chevron-forward-outline" size={24} color="white" />
           </Pressable>
         </View>
       </View>
@@ -60,6 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
+    paddingBottom: 10,
   },
   cartBottomTotalArea: {
     position: "absolute",
@@ -70,7 +88,13 @@ const styles = StyleSheet.create({
   },
   checkoutButton: {
     backgroundColor: "black",
-    paddingVertical: 20,
-    paddingHorizontal: 40,
+    paddingVertical: 16,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 8,
   },
 });

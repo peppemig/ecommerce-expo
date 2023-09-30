@@ -15,15 +15,25 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="Home"
+        name="index"
         options={{
+          title: "Home",
           tabBarIcon: ({ focused }) =>
             focused ? (
               <Ionicons name="md-home-sharp" size={24} color="black" />
             ) : (
               <Ionicons name="md-home-outline" size={24} color="black" />
             ),
-          headerShown: false,
+          headerShown: true,
+          headerLeft: () => <Ionicons name="filter" size={24} color="black" />,
+          headerRight: () => <Ionicons name="search" size={24} color="black" />,
+          headerLeftContainerStyle: {
+            padding: 10,
+          },
+          headerRightContainerStyle: {
+            padding: 10,
+          },
+          headerShadowVisible: false,
         }}
       />
       <Tabs.Screen
@@ -35,7 +45,8 @@ export default function TabLayout() {
             ) : (
               <Ionicons name="cart-outline" size={24} color="black" />
             ),
-          headerShown: false,
+          headerShown: true,
+          headerShadowVisible: false,
         }}
       />
       <Tabs.Screen

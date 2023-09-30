@@ -70,7 +70,9 @@ const styles = StyleSheet.create({
   cartItemContainer: {
     display: "flex",
     flexDirection: "row",
+    gap: 5,
     height: 120,
+    marginBottom: 20,
   },
   rightSideContainer: {
     width: "100%",
