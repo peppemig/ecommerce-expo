@@ -1,13 +1,18 @@
 import { StyleSheet, View, SafeAreaView, Text, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
+import CartItem from "../components/cart/CartItem";
 
 export default function Cart() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Cart</Text>
-      <ScrollView style={{ backgroundColor: "white" }}>
-        <Text>Test</Text>
+      <ScrollView
+        style={{
+          backgroundColor: "white",
+          padding: 10,
+        }}
+      >
+        <CartItem />
       </ScrollView>
       <View style={styles.cartBottomTotalArea}>
         <View
