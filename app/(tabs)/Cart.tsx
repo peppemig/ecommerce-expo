@@ -31,19 +31,7 @@ export default function Cart() {
         <CartItem />
       </ScrollView>
       <View style={styles.cartBottomTotalArea}>
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            margin: 10,
-            borderWidth: 0,
-            borderTopWidth: 1,
-            borderColor: "lightgray",
-            paddingTop: 10,
-          }}
-        >
+        <View style={styles.totalContainer}>
           <View style={{ display: "flex" }}>
             <Text>Total</Text>
             <Text style={{ fontWeight: "bold", fontSize: 24 }}>$112</Text>
@@ -65,13 +53,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     position: "relative",
-  },
-  cartHeaderContainer: {
-    padding: 10,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
   },
   title: {
     fontSize: 20,
@@ -96,5 +77,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 8,
+  },
+  totalContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: 10,
+    borderWidth: 0,
+    borderTopWidth: 1,
+    borderColor: "lightgray",
+    paddingTop: 10,
   },
 });

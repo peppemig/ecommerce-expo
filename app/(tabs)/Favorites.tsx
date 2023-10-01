@@ -1,9 +1,17 @@
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import FavItem from "../components/favorites/FavItem";
 
 export default function Favorites() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Favorites</Text>
+      <ScrollView style={{ padding: 10 }}>
+        <FavItem />
+        <FavItem />
+        <FavItem />
+        <FavItem />
+        <FavItem />
+        <FavItem />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -11,8 +19,7 @@ export default function Favorites() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 20,

@@ -1,12 +1,20 @@
 import { View, Text, Pressable, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 const IMAGE = require("../../../assets/images/home-img.webp");
 
-export default function CartItem() {
+export default function FavItem() {
   return (
     <>
       <View style={styles.cartItemContainer}>
+        <Pressable style={{ position: "absolute", top: 10, right: 5 }}>
+          <Entypo name="dots-three-vertical" size={20} color="black" />
+        </Pressable>
+        <Pressable style={{ position: "absolute", bottom: 10, right: 5 }}>
+          <Ionicons name="cart" size={26} color="black" />
+        </Pressable>
         <View
           style={{
             width: "100%",
@@ -21,18 +29,17 @@ export default function CartItem() {
         <View style={styles.rightSideContainer}>
           <Text style={styles.firstRow}>Item brand</Text>
           <Text style={styles.secondRow}>Item name</Text>
-          <View style={styles.thirdRowContainer}>
-            <Pressable style={styles.qtyButton}>
-              <Ionicons name="remove" color="gray" size={20} />
-            </Pressable>
-            <Text style={{ fontSize: 16 }}>4</Text>
-            <Pressable style={styles.qtyButton}>
-              <Ionicons name="add" color="gray" size={20} />
-            </Pressable>
-          </View>
-          <View style={styles.fourthRow}>
-            <Ionicons name="heart-outline" size={26} color="black" />
-            <Text style={{ fontSize: 20, fontWeight: "bold" }}>$112</Text>
+          <Text style={styles.secondRow}>$112</Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 4,
+            }}
+          >
+            <MaterialIcons name="local-shipping" size={24} color="gray" />
+            <Text style={{ color: "gray" }}>Fast shipping</Text>
           </View>
         </View>
       </View>
@@ -48,6 +55,7 @@ const styles = StyleSheet.create({
     gap: 5,
     height: 120,
     marginBottom: 10,
+    position: "relative",
   },
   rightSideContainer: {
     width: "100%",

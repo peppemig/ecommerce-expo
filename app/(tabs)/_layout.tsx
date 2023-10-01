@@ -58,7 +58,8 @@ export default function TabLayout() {
             ) : (
               <Ionicons name="heart-outline" size={24} color="black" />
             ),
-          headerShown: false,
+          headerShown: true,
+          headerShadowVisible: false,
         }}
       />
       <Tabs.Screen

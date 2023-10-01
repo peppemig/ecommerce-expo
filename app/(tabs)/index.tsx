@@ -6,7 +6,6 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import HomeImage from "../components/home/HomeImage";
 import { useState } from "react";
 import GenderMenu from "../components/home/GenderMenu";
@@ -28,7 +27,7 @@ export default function Home() {
           setSelectedGender={setSelectedGender}
         />
         <FlatList
-          style={styles.list}
+          style={{ margin: 10 }}
           numColumns={2}
           data={DATA}
           ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
@@ -57,9 +56,6 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 30,
     fontWeight: "bold",
-  },
-  list: {
-    margin: 10,
   },
 });
 

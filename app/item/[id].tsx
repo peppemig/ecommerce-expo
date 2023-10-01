@@ -1,6 +1,13 @@
 import { Stack } from "expo-router";
 import { useState } from "react";
-import { View, Text, Image, Pressable, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const ITEM = {
@@ -96,17 +103,13 @@ export default function ItemPage() {
           <Pressable
             key={size}
             onPress={() => setSelectedSize(size)}
-            style={{
-              borderRadius: 1000,
-              width: 35,
-              height: 35,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: size === selectedSize ? "black" : "white",
-              borderColor: size === selectedSize ? "black" : "lightgray",
-              borderWidth: 1,
-            }}
+            style={[
+              styles.sizeBtn,
+              {
+                backgroundColor: size === selectedSize ? "black" : "white",
+                borderColor: size === selectedSize ? "black" : "lightgray",
+              },
+            ]}
           >
             <Text
               style={{
@@ -169,32 +172,42 @@ export default function ItemPage() {
           marginBottom: 40,
         }}
       >
-        <Pressable
-          style={{
-            backgroundColor: "black",
-            alignItems: "center",
-            paddingVertical: 18,
-            flex: 1,
-            borderRadius: 10,
-          }}
-        >
+        <Pressable style={styles.addToCartBtn}>
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 14 }}>
             Add to cart
           </Text>
         </Pressable>
-        <Pressable
-          style={{
-            display: "flex",
-            borderWidth: 1,
-            width: 50,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 10,
-          }}
-        >
+        <Pressable style={styles.addToFavBtn}>
           <Ionicons name="heart-outline" size={26} color="black" />
         </Pressable>
       </View>
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  addToCartBtn: {
+    backgroundColor: "black",
+    alignItems: "center",
+    paddingVertical: 18,
+    flex: 1,
+    borderRadius: 10,
+  },
+  addToFavBtn: {
+    display: "flex",
+    borderWidth: 1,
+    width: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+  },
+  sizeBtn: {
+    borderRadius: 1000,
+    width: 35,
+    height: 35,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+  },
+});
