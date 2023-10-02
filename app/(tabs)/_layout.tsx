@@ -71,7 +71,8 @@ export default function TabLayout() {
             ) : (
               <Ionicons name="person-outline" size={24} color="black" />
             ),
-          headerShown: false,
+          headerShown: true,
+          headerShadowVisible: false,
         }}
       />
     </Tabs>

@@ -1,9 +1,14 @@
-import { Text, View, SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
+import ProfileItem from "../components/profile/ProfileItem";
+import ProfileSection from "../components/profile/ProfileSection";
 
 export default function Profile() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
+      <ScrollView>
+        <ProfileSection title="Overview" />
+        <ProfileItem />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -11,8 +16,7 @@ export default function Profile() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 20,
