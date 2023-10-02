@@ -48,7 +48,7 @@ export default function ProfileItem({ label, icon }: ProfileItemProps) {
             color={icon.color}
           />
         )}
-        <Text style={{ fontSize: 16 }}>Orders</Text>
+        <Text style={{ fontSize: 16 }}>{label}</Text>
       </View>
       <Ionicons name="chevron-forward-outline" size={24} color="black" />
     </Pressable>
