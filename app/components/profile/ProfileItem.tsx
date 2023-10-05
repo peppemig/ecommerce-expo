@@ -1,10 +1,10 @@
 import { Text, View, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
+import { Ionicons, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 
 export enum IconType {
   Feather,
   Ionicons,
+  MaterialCommunityIcons,
 }
 
 type ProfileItemProps = {
@@ -12,7 +12,11 @@ type ProfileItemProps = {
   icon: {
     value:
       | { type: IconType.Feather; name: keyof typeof Feather.glyphMap }
-      | { type: IconType.Ionicons; name: keyof typeof Ionicons.glyphMap };
+      | { type: IconType.Ionicons; name: keyof typeof Ionicons.glyphMap }
+      | {
+          type: IconType.MaterialCommunityIcons;
+          name: keyof typeof MaterialCommunityIcons.glyphMap;
+        };
     size: number;
     color: string;
   };
@@ -43,6 +47,13 @@ export default function ProfileItem({ label, icon }: ProfileItemProps) {
         )}
         {icon.value.type === IconType.Ionicons && (
           <Ionicons
+            name={icon.value.name}
+            size={icon.size}
+            color={icon.color}
+          />
+        )}
+        {icon.value.type === IconType.MaterialCommunityIcons && (
+          <MaterialCommunityIcons
             name={icon.value.name}
             size={icon.size}
             color={icon.color}

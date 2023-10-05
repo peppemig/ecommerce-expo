@@ -7,6 +7,7 @@ import PreferenceButton from "../components/profile/PreferenceButton";
 export enum IconType {
   Feather,
   Ionicons,
+  MaterialCommunityIcons,
 }
 
 export default function Profile() {
@@ -59,6 +60,63 @@ export default function Profile() {
           label="Settings"
           icon={{
             value: { type: IconType.Feather, name: "settings" },
+            size: 24,
+            color: "black",
+          }}
+        />
+        <ProfileSection title="Purchased previously" />
+        <ProfileItem
+          label="Clothing"
+          icon={{
+            value: { type: IconType.Ionicons, name: "shirt-outline" },
+            size: 24,
+            color: "black",
+          }}
+        />
+        <ProfileItemSeparator />
+        <ProfileItem
+          label="Beauty"
+          icon={{
+            value: {
+              type: IconType.MaterialCommunityIcons,
+              name: "face-woman-shimmer-outline",
+            },
+            size: 24,
+            color: "black",
+          }}
+        />
+        <ProfileSection title="Customize" />
+        <ProfileItem
+          label="Your sizes"
+          icon={{
+            value: {
+              type: IconType.MaterialCommunityIcons,
+              name: "human-male-height-variant",
+            },
+            size: 24,
+            color: "black",
+          }}
+        />
+        <ProfileItemSeparator />
+        <ProfileItem
+          label="Your brands"
+          icon={{
+            value: {
+              type: IconType.MaterialCommunityIcons,
+              name: "label",
+            },
+            size: 24,
+            color: "black",
+          }}
+        />
+        <ProfileItemSeparator />
+        <ProfileItem
+          label="Your creators"
+          icon={{
+            value: {
+              type: IconType.Feather,
+              name: "users",
+            },
             size: 24,
             color: "black",
           }}
